@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Todos from './Todos'
+import Todos from './Todos';
+import AddTodo from './AddTodo'
 
 class App extends Component {
   state = {
@@ -8,6 +9,14 @@ class App extends Component {
       { id: 2, content:"Do homework"},
       { id: 3, content:"Do laundry"}
     ]
+  }
+  addTodo = (todo) => {
+    todo.id = Math.random()
+    let todos = [...this.state.todos, todo]
+    this.setState(
+      {
+        todos
+      })
   }
   deleteTodo = (id) => {
     const todos = this.state.todos.filter(todo => {
@@ -23,6 +32,7 @@ class App extends Component {
       <div className="App container">
         <h1 className='center green-text'> ToDo's</h1>
         <Todos todos={this.state.todos} deleteTodo={this.deleteTodo} />
+        <AddTodo addTodo={this.addTodo}></AddTodo>
       </div>
     );
   }
