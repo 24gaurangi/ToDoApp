@@ -4,7 +4,6 @@ class AddTodo extends Component {
   state = {
     content : ''
   }
-
   handleChange = (e) => {
     this.setState({
       content: e.target.value
@@ -17,11 +16,14 @@ class AddTodo extends Component {
         content:''
       })
     }
+
   render(){
+
     return(
-      <div>
+      <div className="container left ">
         <form onSubmit={this.handleSubmit}>
-          <input type="text" onChange={this.handleChange} value={this.state.content}></input>
+          <label className="blue-text"><h5>Add new Task</h5></label>
+          <input type="text" id="task" onChange={this.handleChange} value={this.state.content}></input>
         </form>
       </div>
     )

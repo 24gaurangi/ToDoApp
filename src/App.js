@@ -30,8 +30,7 @@ class App extends Component {
   render() {
     return (
       <div className="App container">
-        <h1 className='center green-text'> ToDo's</h1>
-        <Todos todos={this.state.todos} deleteTodo={this.deleteTodo} />
+        <Todos todos={this.state.todos} deleteTodo={this.deleteTodo} /><br/>
         <AddTodo addTodo={this.addTodo}></AddTodo>
       </div>
     );
